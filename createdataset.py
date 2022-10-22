@@ -1,11 +1,11 @@
 import csv
 import pandas as pd
-from columns import columns
+from columns import columns, words
 from worddate import createworddate
 # [ 'DATE','INDEX', 'VIX', 'SPY', 'COMM', 'CD', 'CS','ENER', 'FIN', 'HEAL', 'IND', 'MAT', 'RE', 'TECH', 'UTIL']
 def createdataset():
     cols = columns()
-    df = pd.DataFrame(columns=cols)
+    keywords = set(words())
     vix = pd.read_csv('vix.csv')
     
     myrows = {}
@@ -28,8 +28,26 @@ def createdataset():
                 myrows[elem[0]][cols[ind]] = elem[1]
         ind+=1
     
+    # fill in empty sectors
+    for elem in myrows:
+        missing = set([ 'DATE','INDEX', 'VIX', 'SPY', 'COMM', 'CD', 'CS','ENER', 'FIN', 'HEAL', 'IND', 'MAT', 'RE', 'TECH', 'UTIL']).difference(set(myrows[elem].keys()))
+        for mis in missing:
+            myrows[elem][mis] = 0        
+
+    # add words 
+    worddate = createworddate()
+    for day in myrows:
+        todayword = set([])
+        if day in myrows:
+            todayword = set(worddate[day])
+        for word in keywords:
+            if word in todayword:
+                myrows[day][word] = '1'
+            else:
+                myrows[day][word] = '0'
+    
     out = pd.DataFrame(myrows.values())
-    out.to_csv('dataset.csv', index=False)
+    out.to_csv('datasetwords.csv', index=False)
     
         
     

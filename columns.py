@@ -11,7 +11,6 @@ def words():
 def columns():
     columns = [ 'DATE','INDEX', 'VIX', 'SPY', 'COMM', 'CD', 'CS','ENER', 'FIN', 'HEAL', 'IND', 'MAT', 'RE', 'TECH', 'UTIL']
     add = words()
-    # columns+=add
+    columns+=add
     return columns
-columns() 
     
