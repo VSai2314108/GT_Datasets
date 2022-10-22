@@ -13,7 +13,7 @@ def aggregatewc(b,e):
         if elem != 0:
             add = {}
             add['text'] = labels[ind]
-            add['value'] =elem+(elem*(random.random()))
+            add['value'] =int(10*(elem+(elem*(random.random()))))
             out.append(add)
     return out
         
