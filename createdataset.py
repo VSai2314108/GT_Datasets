@@ -3,6 +3,7 @@ import pandas as pd
 from columns import columns, words
 from worddate import createworddate
 # [ 'DATE','INDEX', 'VIX', 'SPY', 'COMM', 'CD', 'CS','ENER', 'FIN', 'HEAL', 'IND', 'MAT', 'RE', 'TECH', 'UTIL']
+# r
 def createdataset():
     cols = columns()
     keywords = set(words())
