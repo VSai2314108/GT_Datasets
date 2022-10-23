@@ -190,7 +190,10 @@ names = ['CD','CS','ENER','FIN','HEAL','IND','MAT','TECH','UTIL','COMM','RE']
 for ind,elem in enumerate(initial):
   out = (final[ind]-elem)/elem
   out = round(out,2)
-  perchg.append((out,names[ind]))
-perchg.sort()
+  perchg.append({'name': names[ind], 'perchg': out})
 perchg = perchg[::-1]
 print(perchg)
+
+import json
+with open('final_predictions.json', 'w') as fp:
+    json.dump(perchg,fp)
