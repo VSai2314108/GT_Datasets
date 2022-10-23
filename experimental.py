@@ -186,13 +186,12 @@ initial = df.iloc[len(df)-60]
 initial = initial.values.tolist()
 initial = initial[4:15]
 perchg = []
-names = ['CD','CS','ENER','FIN','HEAL','IND','MAT','TECH','UTIL','COMM','RE']
+names = ['Consumer Discretionary','Consumer Staples','Energy','Financials','Health','Industrials','Materials','Technology','Utilities','Communication Services','Real Estate']
 for ind,elem in enumerate(initial):
   out = (final[ind]-elem)/elem
   out = round(out,2)
-  perchg.append({'name': names[ind], 'perchg': out})
+  perchg.append({'name': names[ind], 'percent': out, 'type':'2'})
 perchg = perchg[::-1]
-print(perchg)
 
 import json
 with open('final_predictions.json', 'w') as fp:

@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Real Estate",
+        "percent": -0.36,
+        "type": "2"
+    },
+    {
+        "name": "Communication Services",
+        "percent": 1.39,
+        "type": "2"
+    },
+    {
+        "name": "Utilities",
+        "percent": 0.03,
+        "type": "2"
+    },
+    {
+        "name": "Technology",
+        "percent": 0.83,
+        "type": "2"
+    },
+    {
+        "name": "Materials",
+        "percent": 0.15,
+        "type": "2"
+    },
+    {
+        "name": "Industrials",
+        "percent": 0.08,
+        "type": "2"
+    },
+    {
+        "name": "Health",
+        "percent": 0.6,
+        "type": "2"
+    },
+    {
+        "name": "Financials",
+        "percent": 0.06,
+        "type": "2"
+    },
+    {
+        "name": "Energy",
+        "percent": 0.19,
+        "type": "2"
+    },
+    {
+        "name": "Consumer Staples",
+        "percent": 0.19,
+        "type": "2"
+    },
+    {
+        "name": "Consumer Discretionary",
+        "percent": 0.74,
+        "type": "2"
+    }
+]
